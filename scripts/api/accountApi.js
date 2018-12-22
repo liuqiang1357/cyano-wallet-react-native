@@ -1,4 +1,3 @@
-import { get } from 'lodash';
 import { Account, Crypto, utils, Wallet } from 'ontology-ts-sdk';
 import { v4 as uuid } from 'uuid';
 import { getWallet } from './authApi';
@@ -74,8 +73,4 @@ export function getPublicKey(walletEncoded) {
   } else {
     return '';
   }
-}
-
-export function isLedgerKey(wallet) {
-  return get(wallet.accounts[0].encryptedKey, 'type') === 'LEDGER';
 }

@@ -155,6 +155,8 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':react-native-dialogs')
+    compile project(':react-native-device-info')
     compile project(':react-native-randombytes')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"

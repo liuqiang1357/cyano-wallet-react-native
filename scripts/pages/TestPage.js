@@ -9,17 +9,20 @@ import {
 import axios from 'axios'
 import asyncScrypt from 'scrypt-async'
 
-import * as AccountAPI from './scripts/api/accountApi'
-import * as AuthAPI from './scripts/api/authApi'
+import * as AccountAPI from '../api/accountApi'
+import * as AuthAPI from '../api/authApi'
 
-export default class HomePage extends Component {
+export default class TestPage extends Component {
   constructor(props) {
     super(props)
     this.wallet = null
   }
 
   onButton0Press = async () => {
-    Alert.alert('alert', JSON.stringify(await axios.get('https://angry.im/t/AjzdI2')))
+    axios.get('https://angry.im/t/AjzdI2').finally(value => {
+    }).then(value => {
+      Alert.alert('alert', JSON.stringify(value))
+    })
   }
 
   onButton1Press = () => {
